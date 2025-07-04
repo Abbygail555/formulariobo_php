@@ -9,6 +9,7 @@
     <h1>Resultado</h1>
 
     <?php
+//Se reciben los datos que serán llenados en el formulario
     $nombre = $_POST["nombre"];
     $cedula = $_POST["cedula"];
     $materia = $_POST["materia"];
@@ -16,15 +17,17 @@
     $nota2 = floatval($_POST["nota2"]);
     $nota3 = floatval($_POST["nota3"]);
 
+//Se calcula el promedio de las notas
     $promedio = ($nota1 + $nota2 + $nota3) / 3;
-
-    echo "Nombre del estudiante: " . $nombre . "<br>";
+//Datos con formato
+    echo "<p><strong>Nombre:</strong> $nombre <br>";
     echo "Cédula: " . $cedula . "<br>";
     echo "Materia: " . $materia . "<br>";
     echo "Nota 1: " . $nota1 . "<br>";
     echo "Nota 2: " . $nota2 . "<br>";
     echo "Nota 3: " . $nota3 . "<br>";
-    echo "Promedio: " . round($promedio, 2);
+    echo "<p><strong>Promedio:</strong> " . number_format($promedio, 2) . "</p>";
     ?>
+  
 </body>
 </html>
